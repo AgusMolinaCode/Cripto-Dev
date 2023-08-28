@@ -49,7 +49,7 @@ const MainTab = () => {
 
   return (
    
-    <Tabs id="custom-animation" value="componente1" className='py-8'>
+    <Tabs id="custom-animation" value="componente1" className='py-2 md:py-8'>
       <TabsHeader
         className="bg-transparent md:w-[20rem]"
         indicatorProps={{

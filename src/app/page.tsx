@@ -10,7 +10,7 @@ export default function Home() {
     <div className="fondo dark:bg-gray-900 duration-200 min-h-screen">
       <div className="mx-2 md:mx-10 h-[0.01rem] bg-gray-900 dark:bg-gray-200 duration-300" />
       <Slider />
-      <div className="px-2 mt-8">
+      <div className="px-2 pt-2 md:mt-8">
         <div>
           <MainTab />
         </div>
