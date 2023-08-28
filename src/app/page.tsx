@@ -15,7 +15,7 @@ export default function Home() {
           <MainTab />
         </div>
         <div className="grid md:grid-cols-2 my-10">
-          <NewsApi />
+          {/* <NewsApi /> */}
           <div>
             <Calculadora />
           </div>
