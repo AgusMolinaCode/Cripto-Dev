@@ -51,7 +51,7 @@ const handleDolaresChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   if (isLoading) {
     return (
       <div className="">
-        <div className=" max-w-[900px] max-h-[250px] animate-pulse rounded-lg bg-gray-400 dark:bg-gray-800" />
+        <div className=" max-w-[900px] max-h-[249px] animate-pulse rounded-lg bg-gray-400 dark:bg-gray-800" />
       </div>
     );
   }
