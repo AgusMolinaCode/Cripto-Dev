@@ -3,9 +3,9 @@ import React, { useRef, useState } from "react";
 
 interface DolaresProps {
   title: string;
-  value: number | undefined;
-  percentage?: number | undefined;
-  time: string | undefined;
+  value: number;
+  percentage: number;
+  time: any;
 }
 const Dolares = ({ title, value, time, percentage }: DolaresProps) => {
   const divRef = useRef<HTMLDivElement>(null);
@@ -58,62 +58,11 @@ const Dolares = ({ title, value, time, percentage }: DolaresProps) => {
   };
 
   return (
-    <div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="relative md:h-[9rem] w-full items-center justify-center overflow-hidden rounded-xl border dark:border-red-100 border-gray-500 bg-gradient-to-r from-gray-200  dark:from-black dark:to-gray-800 duration-200"
-    >
-      <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
-        style={{
-          opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
-        }}
-      />
-
-      <div className="m-4 flex justify-between">
-        <div className="">
-          <p className="dark:text-blue-100 text-gray-800 text-xl md:text-2xl font-bold">
-            {" "}
-            {title}
-          </p>
-          <p className="dark:text-blue-300 text-teal-800 mt-3 text-2xl md:text-4xl font-bold">
-            {value?.toFixed(2)}{" "}
-            <span className="text-gray-500 text-lg">AR$</span>
-          </p>
-          <p className="text-gray-500 font-bold text-md">venta</p>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-gray-500 text-lg font-bold">Variación</p>
-          {percentage ? (
-            <p
-              className={`${
-                percentage && percentage > 0
-                  ? "text-green-400 text-2xl md:text-3xl "
-                  : "text-red-400 text-2xl md:text-3xl"
-              } font-bold`}
-            >
-              {percentage && percentage > 0
-                ? `+${percentage} %`
-                : ` ${percentage} %`}
-            </p>
-          ) : (
-            <div>
-              <p className="text-gray-500 font-bold text-2xl md:text-3xl">
-                = 0.00 %
-              </p>
-            </div>
-          )}
-
-          <p className="text-md font-bold text-gray-500">
-            {getFormattedDate(time as string)}
-          </p>
-        </div>
-      </div>
+    <div>
+      <h1>{title}</h1>
+      <p>Valor: {value}</p>
+      <p>Tiempo: {new Date(time * 1000).toLocaleString()}</p>
+      <p>Variación: {percentage}%</p>
     </div>
   );
 };
